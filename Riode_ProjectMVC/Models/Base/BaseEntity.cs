@@ -1,5 +1,4 @@
 ﻿namespace Riode_ProjectMVC.Models.Base;
-
 public class BaseEntity
 {
 	public int Id { get; set; }

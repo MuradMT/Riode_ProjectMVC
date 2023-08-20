@@ -1,8 +1,4 @@
-﻿using Riode_ProjectMVC.Models.Base;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Riode_ProjectMVC.Models;
-
+﻿namespace Riode_ProjectMVC.Models;
 public class Category:BaseEntity
 {
 	public string Name { get; set; }

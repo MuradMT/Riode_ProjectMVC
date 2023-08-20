@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewEngines;
-using Riode_ProjectMVC.Models.Base;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Riode_ProjectMVC.Models;
-
+﻿namespace Riode_ProjectMVC.Models;
 public class Product:BaseEntity
 {
 	public string Name { get; set; }

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}   
+
+@model LoginVM
+<div class="login-popup mx-auto">
+    <div class="form-box">
+        <div class="tab tab-nav-simple tab-nav-boxed form-tab">
+            <ul class="nav nav-tabs nav-fill align-items-center border-no justify-content-center mb-5" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active border-no lh-1 ls-normal" href="#signin">Login</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="signin">
+                    <form method="post" asp-action="Login">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group mb-3">
+                            <input asp-for="UserName" class="form-control" id="singin-email"  placeholder="Username *" required /> 
+                            <span asp-validation-for="UserName"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Password" class="form-control" id="singin-password"  placeholder="Password *"
+                                   required />
+                            <span asp-validation-for="Password"></span>
+
+                        </div>
+                        <div class="form-footer">
+                            <div class="form-checkbox">
+                                <input asp-for="RememberMe" class="custom-checkbox" 
+                                        />
+                                <label class="form-control-label" asp-for="RememberMe">
+                                    Remember
+                                    me
+                                </label>
+                            </div>
+                            <a asp-action="ForgotPass" class="lost-link">Lost your password?</a>
+                        </div>
+                        <button class="btn btn-dark btn-block btn-rounded" type="submit">Login</button>
+                    </form>
+                    <div class="form-choice text-center">
+                        <label class="ls-m">or Login With</label>
+                        <div class="social-links">
+                            <a href="#" class="social-link social-google fab fa-google border-no"></a>
+                            <a href="#" class="social-link social-facebook fab fa-facebook-f border-no"></a>
+                            <a href="#" class="social-link social-twitter fab fa-twitter border-no"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

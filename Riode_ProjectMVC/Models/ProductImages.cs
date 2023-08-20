@@ -1,5 +1,4 @@
 ﻿namespace Riode_ProjectMVC.Models;
-
 public class ProductImages
 {
 	public int Id { get; set; }

@@ -1,5 +1,4 @@
 ﻿namespace Riode_ProjectMVC.Models;
-
 public class Review
 {
 	public int Id { get; set; }

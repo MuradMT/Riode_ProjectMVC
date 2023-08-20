@@ -1,5 +1,4 @@
 ﻿namespace Riode_ProjectMVC.Models;
-
 public class ProductBadges
 {
 	public int Id { get; set; }

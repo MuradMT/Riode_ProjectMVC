@@ -1,0 +1,414 @@
+﻿
+@model HomeVM     
+   
+<!-- End Header -->
+        <main class="main">
+            <div class="page-content">
+                <section class="intro-section">
+                    <div class="owl-carousel owl-theme row owl-dot-inner owl-dot-white intro-slider animation-slider cols-1 gutter-no"
+                         data-owl-options="{
+                        'nav': false,
+                        'dots': true,
+                        'loop': false,
+                        'items': 1,
+                        'autoplay': false,
+                        'autoplayTimeout': 8000
+                    }">
+                       
+                          @foreach (var slider in Model.Sliders)
+                            {
+                        <div class="banner banner-fixed video-banner intro-slide3" style="background-color: #dddee0;">
+                            <figure>
+                            <img src="~/assets/images/@slider.ImageName" alt="intro-banner" width="1903"
+                             height="630" style="object-fit:contain" />
+                            </figure>
+                            <div class="container">
+                                @if(slider.IsLeftSide==true)
+                                {
+                                <div class="banner-content x-50 y-50 text-left">
+
+
+                                    <h2 class="banner-title mb-3 text-white font-weight-bold text-uppercase ls-m slide-animate"
+                                data-animation-options="{'name': 'fadeInUp', 'duration': '.7s', 'delay': '.5s'}">
+                                        @slider.Title
+                                    </h2>
+                                    <p class="slide-animate mb-7 text-white ls-s font-primary "
+                               data-animation-options="{'name': 'fadeInUp', 'duration': '1s', 'delay': '.8s'}">
+                                        @slider.SubTitle
+                                    </p>
+                                    <a asp-action="Shop" asp-controller="Product" class="btn btn-dark btn-rounded slide-animate mb-1"
+                               data-animation-options="{'name': 'fadeInLeft', 'duration': '1s', 'delay': '1.5s'}">
+                                        Shop
+                                        Now<i class="d-icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                                }
+                                else if(slider.IsLeftSide==false)
+                                {
+                                <div class="banner-content x-50 y-50 text-right">
+                                    <h2 class="banner-title mb-3 text-white font-weight-bold text-uppercase ls-m slide-animate"
+                                data-animation-options="{'name': 'fadeInUp', 'duration': '.7s', 'delay': '.5s'}">
+                                        @slider.Title
+                                    </h2>
+                                    <p class="slide-animate mb-7 text-white ls-s font-primary "
+                               data-animation-options="{'name': 'fadeInUp', 'duration': '1s', 'delay': '.8s'}">
+                                        @slider.SubTitle
+                                    </p>
+                                    <a asp-action="Shop" asp-controller="Product" class="btn btn-dark btn-rounded slide-animate mb-1"
+                               data-animation-options="{'name': 'fadeInLeft', 'duration': '1s', 'delay': '1.5s'}">
+                                        Shop
+                                        Now<i class="d-icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                                }
+                                else{
+                                <div class="banner-content x-50 y-50 text-center">
+                                    <h2 class="banner-title mb-3 text-white font-weight-bold text-uppercase ls-m slide-animate"
+                                data-animation-options="{'name': 'fadeInUp', 'duration': '.7s', 'delay': '.5s'}">
+                                        @slider.Title
+                                    </h2>
+                                    <p class="slide-animate mb-7 text-white ls-s font-primary "
+                               data-animation-options="{'name': 'fadeInUp', 'duration': '1s', 'delay': '.8s'}">
+                                        @slider.SubTitle
+                                    </p>
+                                    <a asp-action="Shop" asp-controller="Product" class="btn btn-dark btn-rounded slide-animate mb-1"
+                               data-animation-options="{'name': 'fadeInLeft', 'duration': '1s', 'delay': '1.5s'}">
+                                        Shop
+                                        Now<i class="d-icon-arrow-right"></i>
+                                    </a>
+                                </div>
+                                }
+                              
+                            </div>
+                        </div>
+                                
+                            }
+                    </div>
+
+                    <div class="container mt-6 appear-animate">
+                        <div class="service-list">
+                            <div class="owl-carousel owl-theme row cols-lg-3 cols-sm-2 cols-1" data-owl-options="{
+                                    'items': 3,
+                                    'nav': false,
+                                    'dots': false,
+                                    'loop': true,
+                                    'autoplay': false,
+                                    'autoplayTimeout': 5000,
+                                    'responsive': {
+                                        '0': {
+                                            'items': 1
+                                        },
+                                        '576': {
+                                            'items': 2
+                                        },
+                                        '768': {
+                                            'items': 3,
+                                            'loop': false
+                                        }
+                                    }
+                                }">
+                                <div class="icon-box icon-box-side icon-box1 appear-animate" data-animation-options="{
+                                        'name': 'fadeInRightShorter',
+                                        'delay': '.3s'
+                                    }">
+                                    <i class="icon-box-icon d-icon-truck"></i>
+                                    <div class="icon-box-content">
+                                        <h4 class="icon-box-title text-capitalize ls-normal lh-1">
+                                            Free Shipping &amp;
+                                            Return
+                                        </h4>
+                                        <p class="ls-s lh-1">Free shipping on orders over $99</p>
+                                    </div>
+                                </div>
+
+                                <div class="icon-box icon-box-side icon-box2 appear-animate" data-animation-options="{
+                                        'name': 'fadeInRightShorter',
+                                        'delay': '.4s'
+                                    }">
+                                    <i class="icon-box-icon d-icon-service"></i>
+                                    <div class="icon-box-content">
+                                        <h4 class="icon-box-title text-capitalize ls-normal lh-1">
+                                            Customer Support 24/7
+                                        </h4>
+                                        <p class="ls-s lh-1">Instant access to perfect support</p>
+                                    </div>
+                                </div>
+
+                                <div class="icon-box icon-box-side icon-box3 appear-animate" data-animation-options="{
+                                        'name': 'fadeInRightShorter',
+                                        'delay': '.5s'
+                                    }">
+                                    <i class="icon-box-icon d-icon-secure"></i>
+                                    <div class="icon-box-content">
+                                        <h4 class="icon-box-title text-capitalize ls-normal lh-1">
+                                            100% Secure Payment
+                                        </h4>
+                                        <p class="ls-s lh-1">We ensure secure payment!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pt-10 mt-7 appear-animate" data-animation-options="{
+                    'delay': '.3s'
+                }">
+                    <div class="container">
+                        <h2 class="title title-center mb-5">Our Categories</h2>
+                        <div class="row">
+                            @foreach (var item in Model.Categories)
+                                {
+
+                            <div class="col-xs-6 col-lg-3 mb-4">
+                                <div class="category category-default1 category-absolute banner-radius overlay-zoom">
+                                <a asp-action="Shop" asp-controller="Product">
+                                        <figure class="category-media">
+                                            <img src="~/assets/images/@item.ImageName" alt="category" 
+                                             style="background-color: #8c8c8d;width:500px;height:250px" />
+                                        </figure>
+                                    </a>
+                                    <div class="category-content">
+                                        <h4 class="category-name font-weight-bold ls-l">
+                                            <a asp-action="Shop" asp-controller="Product">
+                                           @item.Name
+                                            </a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                                }
+                        
+                        </div>
+                    </div>
+                </section>
+
+                <section class="product-wrapper container appear-animate mt-6 mt-md-10 pt-4 pb-8" data-animation-options="{
+                    'delay': '.3s'
+                }">
+                    <h2 class="title title-center mb-5">Best Sellers</h2>
+                    <div class="owl-carousel owl-theme row owl-nav-full cols-2 cols-md-3 cols-lg-4" data-owl-options="{
+                        'items': 5,
+                        'nav': false,
+                        'loop': false,
+                        'dots': true,
+                        'margin': 20,
+                        'responsive': {
+                            '0': {
+                                'items': 2
+                            },
+                            '768': {
+                                'items': 3
+                            },
+                            '992': {
+                                'items': 4,
+                                'dots': false,
+                                'nav': true
+                            }
+                        }
+                    }">
+                  @foreach (var item in Model.Products)
+                {
+                    <div class="product text-center">
+                        <figure class="product-media">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id" >
+                                <img src="~/assets/images/@item.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().ImageName" alt="Blue Pinafore Denim Dress"
+                                 width="280" height="315" style="background-color: #f2f3f5;" />
+                                  <img src="~/assets/images/@item.ProductImages.Where(p=>p.IsMain==false).FirstOrDefault().ImageName" alt="Blue Pinafore Denim Dress"
+                                 width="280" height="315" style="background-color: #f2f3f5;" />
+                            </a>
+                            <div class="product-label-group">
+                                @if (@item.ProductBadges.FirstOrDefault()!=null)
+                                {
+                                <label class="product-label label-new">@item.ProductBadges.FirstOrDefault().Badge.Name</label>
+                                    
+                                }
+                                @if (item.DiscountPercent>0)
+                                {
+                                    <label class="product-label label-sale" title="On-Sale Product">@item.DiscountPercent% Off</label>
+                                }
+                            </div>  
+                            <div class="product-action-vertical">
+                                <a asp-action="AddBasket" asp-controller="Product" asp-route-id="@item.Id" class="btn-product-icon addbasket btn-cart" data-toggle="modal"
+                               data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
+                                <a href="~/assets/#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+                                    <i class="d-icon-heart"></i>
+                                </a>
+                            </div>
+                            <div class="product-action">
+                                <a href="~/assets/#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+                            </div>
+                        </figure>
+                        <div class="product-details">
+                            <div class="product-cat">
+                                <a href="~/assets/shop-grid-3cols.html">@item.Category.Name</a>
+                            </div>
+                            <h3 class="product-name">
+                                <a asp-action="Detail" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a>
+                            </h3>
+                            <div class="product-price">
+                                <span class="price">$@item.SellPrice</span>
+                            </div>
+                            <div class="ratings-container">
+                                <div class="ratings-full">
+                                    <span class="ratings" style="width:100%"></span>
+                                    <span class="tooltiptext tooltip-top"></span>
+                                </div>
+                                <a href="~/assets/product.html" class="rating-reviews">( 12 reviews )</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                    </div>
+                </section>
+
+
+                <section class="product-wrapper mt-6 mt-md-10 pt-4 mb-10 pb-2 container appear-animate" data-animation-options="{
+                    'delay': '.6s'
+                }">
+                    <h2 class="title title-center">Our Featured</h2>
+                    <div class="owl-carousel owl-theme row cols-2 cols-md-3 cols-lg-4 cols-xl-5" data-owl-options="{
+                        'items': 5,
+                        'nav': false,
+                        'loop': false,
+                        'dots': true,
+                        'margin': 20,
+                        'responsive': {
+                            '0': {
+                                'items': 2
+                            },
+                            '768': {
+                                'items': 3
+                            },
+                            '992': {
+                                'items': 4
+                            },
+                            '1200': {
+                                'items': 5,
+                                'dots': false,
+                                'nav': true
+                            }
+                        }
+                    }">
+                       @foreach (var item in Model.Products.OrderByDescending(p=>p.CreatedAt).Take(5))
+                {
+                        <div class="product text-center">
+                            <figure class="product-media">
+                                <a asp-action="Detail" asp-controller="Product" asp-route-id="@item.Id">
+                                    <img src="~/assets/images/@item.ProductImages.Where(p=>p.IsMain==true).FirstOrDefault().ImageName" alt="Blue Pinafore Denim Dress"
+                                         width="220" height="245" style="background-color: #f2f3f5;" />
+                                </a>
+                                <div class="product-action-vertical">
+                                <a asp-action="AddBasket" asp-controller="Product" asp-route-id="@item.Id" class="btn-product-icon btn-cart" data-toggle="modal"
+                                       data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
+                                    <a href="~/assets/#" class="btn-product-icon btn-wishlist" title="Add to wishlist">
+                                        <i class="d-icon-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="product-action">
+                                    <a href="~/assets/#" class="btn-product btn-quickview" title="Quick View">Quick View</a>
+                                </div>
+                            </figure>
+                            <div class="product-details">
+                                <div class="product-cat">
+                                    <a href="~/assets/shop-grid-3cols.html">@item.Category.Name</a>
+                                </div>
+                                <h3 class="product-name">
+                                <a asp-action="Detail" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a>
+                                </h3>
+                                <div class="product-price">
+                                    <span class="price">$@item.SellPrice</span>
+                                </div>
+                                <div class="ratings-container">
+                                    <div class="ratings-full">
+                                        <span class="ratings" style="width:40%"></span>
+                                        <span class="tooltiptext tooltip-top"></span>
+                                    </div>
+                                    <a href="~/assets/product.html" class="rating-reviews">( 15 reviews )</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                }
+                    </div>
+                </section>
+
+                <section class="banner banner-background parallax text-center" data-option="{'offset': -60}"
+                         data-image-src="~/assets/images/demos/demo1/parallax.jpg" style="background-color: #2d2f33;">
+                    <div class="container">
+                        <div class="banner-content appear-animate"
+                             data-animation-options="{'name': 'blurIn', 'duration': '1s', 'delay': '.2s'}">
+                            <h4 class="banner-subtitle text-white font-weight-bold ls-l">
+                                Extra<span class="d-inline-block label-star bg-dark text-primary ml-4 mr-2">
+                                    30%
+                                    Off
+                                </span>Online
+                            </h4>
+                            <h3 class="banner-title font-weight-bold text-white">Summer Season Sale</h3>
+                            <p class="text-white ls-s">Free shipping on orders over $99</p>
+                            <a href="~/assets/shop.html" class="btn btn-primary btn-rounded btn-icon-right">
+                                Shop Now<i class="d-icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                    
+                <section class="mt-2 pb-6 pt-10 pb-md-10 appear-animate" data-animation-options="{
+                    'delay': '.3s'
+                }">
+                    <h2 class="title d-none">Our Brand</h2>
+                    <div class="container">
+                        <div class="owl-carousel owl-theme row brand-carousel cols-xl-6 cols-lg-5 cols-md-4 cols-sm-3 cols-2"
+                             data-owl-options="{
+                            'nav': false,
+                            'dots': false,
+                            'autoplay': true,
+                            'margin': 20,
+                            'loop': true,
+                            'responsive': {
+                                '0': {
+                                    'items': 2
+                                },
+                                '576': {
+                                    'items': 3
+                                },
+                                '768': {
+                                    'items': 4
+                                },
+                                '992': {
+                                    'items': 5
+                                },
+                                '1200': {
+                                    'items': 6
+                                }
+                            }
+                        }">
+                            <figure>
+                                <img src="~/assets/images/brands/1.png" alt="brand" width="180" height="100" />
+                            </figure>
+                            <figure>
+                                <img src="~/assets/images/brands/2.png" alt="brand" width="180" height="100" />
+                            </figure>
+                            <figure>
+                                <img src="~/assets/images/brands/3.png" alt="brand" width="180" height="100" />
+                            </figure>
+                            <figure>
+                                <img src="~/assets/images/brands/4.png" alt="brand" width="180" height="100" />
+                            </figure>
+                            <figure>
+                                <img src="~/assets/images/brands/5.png" alt="brand" width="180" height="100" />
+                            </figure>
+                            <figure>
+                                <img src="~/assets/images/brands/6.png" alt="brand" width="180" height="100" />
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+               @await Component.InvokeAsync("FourCrudProduct")
+            </div>
+        </main>
+<!-- End of Main -->
